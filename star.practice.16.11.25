@@ -1,0 +1,22 @@
+#include<iostream>
+int main()
+{
+	using namespace std;
+	int hang=0;
+	cout<<"请输入行数"<<endl;
+	cin>>hang;
+	for(int n=1;n<=hang;n++)
+	{
+		for(int a=1;a<=hang;a++)
+		{
+			if(n<hang&&a<=hang-n)
+			cout<<".";
+			else
+			cout<<"*";
+		}
+		cout<<endl;
+	} 
+	cin.get();
+	cin.get();
+	return 0;
+} 
