@@ -1,0 +1,64 @@
+#include<iostream>
+const int strsize=20;
+struct bop{
+	char fullname[strsize];
+	char title[strsize];
+	char bopname[strsize];
+	int preference;
+}; 
+int main()
+{
+	using namespace std;
+    char putch;
+	bop member[4]=
+	{
+		{"大傻","董事长","高",1},
+		{"二楞","总经理","富",2},
+		{"狗剩","总裁","帅",3},
+		{"丧Q","话事人","牛",1},
+	} ;
+	cout<<"请输入您的命令"<<endl;
+	cout<<"a.查看真实姓名"<<endl;
+	cout<<"b.查看头衔"<<endl;
+	cout<<"c.查看bop姓名"<<endl;
+	cout<<"d.查看偏好"<<endl;
+	cout<<"e.退出"<<endl;
+	cin>>putch;
+	while(putch!='e'&&putch!='E')
+	{
+		switch(putch)
+	    {
+		case 'a':
+		case 'A':for(int n=0;n<4;n++)
+		{
+		cout<<member[n].fullname<<endl;
+		}break;
+		case 'b':
+		case 'B':for(int n=0;n<4;n++)
+		{
+			cout<<member[n].title<<endl;
+		}break;
+		case 'c':
+		case 'C':for(int n=0;n<4;n++)
+		{
+			cout<<member[n].bopname<<endl;
+		}break;
+		case 'd':
+		case 'D':for(int n=0;n<4;n++)
+		{
+			switch(member[n].preference)
+			{	
+			case 1:cout<<member[n].fullname<<endl;continue;
+			case 2:cout<<member[n].title<<endl;continue;
+			case 3:cout<<member[n].bopname<<endl;continue;
+			}
+		}
+		default:cout<<"输入指令不明"<<endl; 
+	    }
+	cout<<"请输入您的命令"<<endl;
+	cin>>putch;
+	}
+	cin.get();
+	cin.get();
+	return 0;
+}
